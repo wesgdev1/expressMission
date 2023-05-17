@@ -16,6 +16,10 @@ let notes = [
   },
 ];
 
+//SE AGREGO ESTO PARA SOLUCIONAR EL FALLO
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //1. Get all
 app.get("/notes", (req, res) => {
   res.json(notes);
